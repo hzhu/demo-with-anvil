@@ -11,7 +11,14 @@ import {
 } from "@remix-run/react";
 import { json } from "@remix-run/node";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  base,
+  foundry,
+} from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import {
   darkTheme,
@@ -80,7 +87,7 @@ function App() {
 
   const [{ config, chains }] = useState(() => {
     const { chains, publicClient } = configureChains(
-      [mainnet, polygon, optimism, arbitrum, base],
+      [mainnet, polygon, optimism, arbitrum, base, foundry],
       [publicProvider()]
     );
 
